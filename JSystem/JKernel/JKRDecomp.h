@@ -1,7 +1,7 @@
 #pragma once
 
-#include "JKernel/JKRThread.h"
-#include "JKernel/JKRAramPiece.h"
+#include "JSystem/JKernel/JKRThread.h"
+#include "JSystem/JKernel/JKRAramPiece.h"
 
 class JKRDecompCommand
 {

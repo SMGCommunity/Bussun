@@ -1,8 +1,8 @@
 #pragma once
 
-#include "JKernel/JKRDisposer.h"
-#include "JSupport/JSUList.h"
-#include "JSupport/JSUTree.h"
+#include "JSystem/JKernel/JKRDisposer.h"
+#include "JSystem/JSupport/JSUList.h"
+#include "JSystem/JSupport/JSUTree.h"
 
 #include <stddef.h>
 #include <revolution/os.h>

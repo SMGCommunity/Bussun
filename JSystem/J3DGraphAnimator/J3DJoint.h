@@ -1,6 +1,6 @@
 #pragma once
 
-#include "J3DGraphBase/J3DTransform.h"
+#include "JSystem/J3DGraphBase/J3DTransform.h"
 
 class J3DJoint
 {

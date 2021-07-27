@@ -1,7 +1,7 @@
 #pragma once
 
-#include "JKernel/JKRFileFinder.h"
-#include "JKernel/JKRFileLoader.h"
+#include "JSystem/JKernel/JKRFileFinder.h"
+#include "JSystem/JKernel/JKRFileLoader.h"
 #include <revolution.h>
 
 enum JKRMemBreakFlag

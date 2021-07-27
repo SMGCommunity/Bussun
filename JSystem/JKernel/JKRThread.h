@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JKernel/JKRDisposer.h"
+#include "JSystem/JKernel/JKRDisposer.h"
 #include <revolution/os.h>
 
 class JKRThread : public JKRDisposer

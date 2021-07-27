@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JKernel/JKRThread.h"
+#include "JSystem/JKernel/JKRThread.h"
 
 class JKRAram : public JKRThread
 {

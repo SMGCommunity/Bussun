@@ -1,7 +1,7 @@
 #pragma once
 
-#include "J3DGraphAnimator/J3DModelData.h"
-#include "J3DGraphBase/J3DMtxBuffer.h"
+#include "JSystem/J3DGraphAnimator/J3DModelData.h"
+#include "JSystem/J3DGraphBase/J3DMtxBuffer.h"
 #include <revolution/mtx.h>
 
 class J3DModel

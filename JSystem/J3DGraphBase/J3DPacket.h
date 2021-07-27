@@ -1,6 +1,6 @@
 #pragma once
 
-#include "J3DGraphBase/J3DDrawBuffer.h"
+#include "JSystem/J3DGraphBase/J3DDrawBuffer.h"
 #include "revolution/GD/GDBase.h"
 #include <revolution.h>
 

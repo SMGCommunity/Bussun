@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JKernel/JKRArchive.h"
+#include "JSystem/JKernel/JKRArchive.h"
 
 class JKRMemArchive : public JKRArchive
 {

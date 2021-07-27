@@ -1,6 +1,6 @@
 #pragma once
 
-#include "J3DGraphAnimator/J3DModelData.h"
+#include "JSystem/J3DGraphAnimator/J3DModelData.h"
 
 class J3DMtxBuffer
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JSupport/JSUList.h"
+#include "JSystem/JSupport/JSUList.h"
 
 template<typename T>
 class JSUTree : public JSUPtrList

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <revolution.h>
-#include "JMap/JMapInfo.h"
+#include "JSystem/JMap/JMapInfo.h"
 
 class JMapInfoIter
 {
