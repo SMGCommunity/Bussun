@@ -28,6 +28,8 @@ public:
     void createAndAddLayoutHolderStationed(const char *);
     void createAndAddStationed(const char *);
 
+    ResourceHolder* createAndAdd(const char*, JKRHeap *);
+
     static void startCreateResourceHolderOnMainThread(const char *, CreateResourceHolderArgs *);
 
     ResourceHolderManagerName2Resource mResources[0x200];           // _0

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Game/NameObj/NameObj.h"
-#include "JSystem/J3DGraphAnimator/J3DModelData.h"
+#include "JSystem/J3DGraphAnimator/J3DModelData.hpp"
 #include <revolution.h>
 
 class VolumeModelDrawInit : public NameObj {

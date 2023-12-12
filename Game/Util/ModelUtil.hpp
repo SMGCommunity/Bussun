@@ -2,7 +2,7 @@
 
 #include <revolution.h>
 #include "JSystem/JGeometry/TBox.h"
-#include "JSystem/J3DGraphAnimator/J3DModelData.h"
+#include "JSystem/J3DGraphAnimator/J3DModelData.hpp"
 
 class J3DModel;
 class J3DMaterial;

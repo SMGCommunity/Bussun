@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Game/Util.h"
-
 #include <revolution.h>
+#include "Game/Util/JMapInfo.hpp"
 
 namespace MR {
     void notifyRequestNameObjMovementOnOff();

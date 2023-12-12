@@ -1,8 +1,8 @@
 #pragma once
 
-#include "JSystem/J3DGraphAnimator/J3DAnimation.h"
-#include "JSystem/J3DGraphAnimator/J3DModel.h"
-#include "JSystem/J3DGraphAnimator/J3DModelData.h"
+#include "JSystem/J3DGraphAnimator/J3DAnimation.hpp"
+#include "JSystem/J3DGraphAnimator/J3DModel.hpp"
+#include "JSystem/J3DGraphAnimator/J3DModelData.hpp"
 
 class J3DAnmBase;
 class ResTable;
