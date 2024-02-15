@@ -35,7 +35,6 @@ The following region targets exist:
 - **PAL**: European/Australian releases
 - **USA**: American releases
 - **JPN**: Japanese releases
-- **TWN**: Taiwanese releases
 - **KOR**: Korean releases
 
 The generated XML patches for Riivolution can be found in the *bin* folder.
