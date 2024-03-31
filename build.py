@@ -63,7 +63,7 @@ def main():
             deleteDFiles()
             sys.exit(1)
     objects = ' '.join([str(x) for (_, x) in tasks])
-    flags = f"-static=0x80002000 -output-riiv=build{region}.xml -externals={symbol_map}"
+    flags = f"-static=0x80001800 -output-riiv=build{region}.xml -externals={symbol_map}"
     if subprocess.call(f"{kamek_path} {objects} {flags}") != 0:
         sys.exit(1)
     print("Compilation complete.")
