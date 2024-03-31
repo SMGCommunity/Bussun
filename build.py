@@ -62,12 +62,12 @@ def main():
         if subprocess.call(f"{compiler_path} {flags} {source_path} -o {build_path}", shell=True) == 1:
             deleteDFiles()
             sys.exit(1)
-    objects = ' '.join([str(x) for (_, x) in tasks])
+    objects = ' '.join([x for (_, x) in tasks])
     flags = f"-static=0x80001800 -output-riiv=build{region}.xml -externals={symbol_map}"
     if subprocess.call(f"{kamek_path} {objects} {flags}") != 0:
         sys.exit(1)
-    for (_, build_path) in tasks:
-        os.remove(build_path)
+    for (_, obj) in tasks:
+        os.remove(obj)
     print("Compilation complete.")
 
 if __name__ == "__main__":
