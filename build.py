@@ -66,6 +66,8 @@ def main():
     flags = f"-static=0x80001800 -output-riiv=build{region}.xml -externals={symbol_map}"
     if subprocess.call(f"{kamek_path} {objects} {flags}") != 0:
         sys.exit(1)
+    for (_, build_path) in tasks:
+        os.remove(build_path)
     print("Compilation complete.")
 
 if __name__ == "__main__":
