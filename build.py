@@ -34,7 +34,7 @@ def main():
 
     symbol_map = f"Symbols\\RMG{region}01.map"
 
-    includes = "-i . -I- -i Petari\\include -I- -i source "
+    includes = "-i . -I- -i Petari\\include -I- -i source -I- -i include "
     default_compiler_path = Path("Wii\\1.3")
     rvl_sdk_path = Path("Petari\\libs\\RVL_SDK\\include")
     trk_path = Path("Petari\\libs\\MetroTRK\\include")

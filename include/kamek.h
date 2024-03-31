@@ -1,6 +1,6 @@
 #pragma once
 #include "Bussun.h"
-#include "Petari/libs/RVL_SDK/include/revolution/types.h"
+#include "revolution/types.h"
 
 struct KamekHeader
 {
