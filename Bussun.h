@@ -11,3 +11,4 @@ const bool MACRO_CONCAT(Assert, __COUNTER__) = msg::result
 #endif
 STATIC_ASSERT(sizeof(void*) == 4, size_of_pointer_must_be_4);
 STATIC_ASSERT(sizeof(long) == 4, size_of_long_must_be_4);
+typedef unsigned long size_t;
