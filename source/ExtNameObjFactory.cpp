@@ -2,8 +2,8 @@
 #include "Game/Util/StringUtil.hpp"
 
 namespace {
-    void* getNameObjCreator(const char* pName) {
-        void* creator = NameObjFactory::getCreator(pName);
+    CreationFuncPtr getNameObjCreator(const char* pName) {
+        CreationFuncPtr creator = NameObjFactory::getCreator(pName);
         if (!creator) {
             for (int i = 0; i < cNewCreateNameObjTableCount; i++) {
                 const NameObjFactory::Name2CreateFunc entry = cNewCreateNameObjTable[i];
