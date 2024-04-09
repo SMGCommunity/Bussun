@@ -1,5 +1,6 @@
 #pragma once
 #include "hooks.h"
+#include "revolution/types.h"
 template<bool> struct StaticAssert;
 template<> struct StaticAssert<true> {static const bool result = true;};
 #ifdef __COUNTER__

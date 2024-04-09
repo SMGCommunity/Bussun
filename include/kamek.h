@@ -1,6 +1,5 @@
 #pragma once
 #include "Bussun.h"
-#include "revolution/types.h"
 
 struct KamekHeader
 {
