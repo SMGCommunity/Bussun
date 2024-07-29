@@ -2,7 +2,7 @@
 #define __KAMEK_BASE_HOOKS_H
 
 // allow Kamek hooks to be defined from C++ source files
-#pragma section ".kamek"
+#pragma section RX ".kamek"
 
 // bad approach, but whatever
 #define __COUNTER__ __LINE__
@@ -14,11 +14,13 @@
 #define kctInjectCall 4
 #define kctPatchExit 5
 
+typedef const unsigned char kmSymbol;
 
 #define kmIdentifier(key, counter) \
 	_k##key##counter
 #define kmHookInt(counter) \
-	__declspec (section ".kamek") static const u32 kmIdentifier(Hook, counter)
+	__declspec (section ".kamek") __declspec(force_export) static const u32 kmIdentifier(Hook, counter) 
+	
 
 // general hook definition macros
 // TODO: debugging data (file, line, ...) for diagnostic use by Kamek maybe? :3
@@ -84,5 +86,16 @@
 	kmCallDefInt(__COUNTER__, addr, returnType, __VA_ARGS__)
 #define kmCallDefAsm(addr) \
 	kmCallDefInt(__COUNTER__, addr, asm void, )
+
+#define kmIntWriteInstruction(addr, counter, ...) \
+    kmHookInt(counter)[4] = {3, kctWrite, (u32)2, (u32)(addr)}; \
+    __declspec (section ".kamek") asm void kmIdentifier(Code, counter) (void) { \
+            nofralloc; \
+            __VA_ARGS__; \
+    };
+// kmWriteInstruction
+//   Replace the word at the given address with the given instruction, assembled
+#define kmWriteInstruction(addr, ...) \
+    kmIntWriteInstruction(addr, __COUNTER__, __VA_ARGS__)
 
 #endif
