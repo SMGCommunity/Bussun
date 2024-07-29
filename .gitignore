@@ -35,5 +35,6 @@ Compilers
 Kamek
 .vscode
 *.xml
+*.ini
 *.pyc
 *.bin

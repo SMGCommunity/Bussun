@@ -17,7 +17,7 @@ def deleteDFiles():
             os.remove(os.path.join(os.getcwd(), dire))
 
 def main():
-    flags = "-c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on -rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO -DMTX_USE_PS "
+    flags = "-c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -O4,s -inline on -rtti off -sdata 0 -sdata2 0 -align powerpc -str pool -enum int -DGEKKO -DMTX_USE_PS "
 
     for build_flag in [x for x in sys.argv if x.startswith("-D")]:
         flag = build_flag[2:]
@@ -32,21 +32,21 @@ def main():
 
     region = Region[region_arg]
 
-    symbol_map = f"Symbols\\RMG{region}01.map"
+    symbol_map = f"symbols/USA.txt"
 
-    includes = "-i . -I- -i Petari\\include -I- -i source -I- -i include "
-    default_compiler_path = Path("Wii\\1.3")
-    rvl_sdk_path = Path("Petari\\libs\\RVL_SDK\\include")
-    trk_path = Path("Petari\\libs\\MetroTRK\\include")
-    runtime_path = Path("Petari\\libs\\Runtime\\include")
-    msl_c_path = Path("Petari\\libs\\MSL_C\\include")
-    facelib_path = Path("Petari\\libs\\RVLFaceLib\\include")
-    jsystem_path = Path("Petari\\libs\\JSystem\\include")
-    nw4r_path = Path("Petari\\libs\\nw4r\\include")
+    includes = "-i . -I- -i Petari/include -I- -i source -I- -i include "
+    default_compiler_path = Path("deps/CodeWarrior/mwcceppc.exe")
+    rvl_sdk_path = Path("Petari/libs/RVL_SDK/include")
+    trk_path = Path("Petari/libs/MetroTRK/include")
+    runtime_path = Path("Petari/libs/Runtime/include")
+    msl_c_path = Path("Petari/libs/MSL_C/include")
+    facelib_path = Path("Petari/libs/RVLFaceLib/include")
+    jsystem_path = Path("Petari/libs/JSystem/include")
+    nw4r_path = Path("Petari/libs/nw4r/include")
     includes += f"-i {facelib_path} -i {rvl_sdk_path} -I- -i {trk_path} -I- -i {runtime_path} -I- -i {msl_c_path} -I- -i {jsystem_path} -I- -i {nw4r_path} "
     flags += includes
-    compiler_path = Path(f"Compilers\\{default_compiler_path}\\mwcceppc.exe")
-    kamek_path = Path("Kamek\\Kamek.exe")
+    compiler_path = default_compiler_path
+    kamek_path = Path("deps/Kamek/Kamek.exe")
     tasks = list[tuple[str, str]]()
     files = [x for x in glob("source/*.cpp")]
     files += [x for x in glob("source/*.c")]
@@ -64,10 +64,11 @@ def main():
             sys.exit(1)
     objects = ' '.join([x for (_, x) in tasks])
     flags = f"-static=0x80001800 -output-riiv=build{region}.xml -externals={symbol_map}"
-    if subprocess.call(f"{kamek_path} {objects} {flags}") != 0:
+    if subprocess.call(f"{kamek_path} {objects} {flags}", shell=True) != 0:
         sys.exit(1)
     for (_, obj) in tasks:
-        os.remove(obj)
+    #    os.remove(obj)
+        pass
     print("Compilation complete.")
 
 if __name__ == "__main__":

@@ -4,6 +4,9 @@
 // allow Kamek hooks to be defined from C++ source files
 #pragma section ".kamek"
 
+// bad approach, but whatever
+#define __COUNTER__ __LINE__
+
 // hook type IDs _must_ match what's in the Kamek source!
 #define kctWrite 1
 #define kctConditionalWrite 2
