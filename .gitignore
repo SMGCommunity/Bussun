@@ -38,3 +38,4 @@ Kamek
 *.ini
 *.pyc
 *.bin
+.*.swp
