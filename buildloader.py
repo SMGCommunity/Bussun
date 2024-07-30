@@ -37,20 +37,20 @@ def getregionletter(region: str):
             return LETTERS[i]
 
 def build(region: str, outputPath: str, buildFullXML: bool):
-    rvl_sdk_path = "Petari/libs/RVL_SDK/include"
-    trk_path = "Petari/libs/MetroTRK/include"
-    runtime_path = "Petari/libs/Runtime/include"
-    msl_c_path = "Petari/libs/MSL_C/include"
-    facelib_path = "Petari/libs/RVLFaceLib/include"
-    jsystem_path = "Petari/libs/JSystem/include"
-    nw4r_path = "Petari/libs/nw4r/include"
+    rvl_sdk_path = "PetariHeaders/RVL_SDK/include"
+    trk_path = "PetariHeaders/MetroTRK/include"
+    runtime_path = "PetariHeaders/Runtime/include"
+    msl_c_path = "PetariHeaders/MSL_C/include"
+    facelib_path = "PetariHeaders/RVLFaceLib/include"
+    jsystem_path = "PetariHeaders/JSystem/include"
+    nw4r_path = "PetariHeaders/nw4r/include"
 #    compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
 #                  f"-rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO " \
 #                  f"-i include -I- -i loader -D{region} loader/loader.cpp -o loader/loader.o"
 
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
                   f"-rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO " \
-                  f"-i loader -i Petari/ -I- -i Petari/include -i {facelib_path} -i {rvl_sdk_path} -I- -i {trk_path} -I- -i {runtime_path} " \
+                  f"-i loader -i Petari/ -I- -i PetariHeaders/include -i {facelib_path} -i {rvl_sdk_path} -I- -i {trk_path} -I- -i {runtime_path} " \
                   f"-I- -i {msl_c_path} -I- -i {jsystem_path} -I- -i {nw4r_path} -i include -D{region} " \
                   f"loader/loader.cpp -o loader/loader.o" 
 

@@ -87,6 +87,8 @@ void OSYieldThread(void);
 
 void OSWakeupThread(OSThreadQueue *);
 
+void OSSleepTicks(OSTime);
+
 BOOL OSSetThreadPriority(OSThread *, OSPriority);
 OSPriority OSGetThreadPriority(OSThread *);
 

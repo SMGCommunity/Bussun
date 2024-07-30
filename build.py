@@ -34,15 +34,15 @@ def main():
 
     symbol_map = f"symbols/USA.txt"
 
-    includes = "-i . -I- -i Petari/include -I- -i source -I- -i include "
+    includes = "-i . -I- -i PetariHeaders/include -I- -i source -I- -i include "
     default_compiler_path = Path("deps/CodeWarrior/mwcceppc.exe")
-    rvl_sdk_path = Path("Petari/libs/RVL_SDK/include")
-    trk_path = Path("Petari/libs/MetroTRK/include")
-    runtime_path = Path("Petari/libs/Runtime/include")
-    msl_c_path = Path("Petari/libs/MSL_C/include")
-    facelib_path = Path("Petari/libs/RVLFaceLib/include")
-    jsystem_path = Path("Petari/libs/JSystem/include")
-    nw4r_path = Path("Petari/libs/nw4r/include")
+    rvl_sdk_path = Path("PetariHeaders/RVL_SDK/include")
+    trk_path = Path("PetariHeaders/MetroTRK/include")
+    runtime_path = Path("PetariHeaders/Runtime/include")
+    msl_c_path = Path("PetariHeaders/MSL_C/include")
+    facelib_path = Path("PetariHeaders/RVLFaceLib/include")
+    jsystem_path = Path("PetariHeaders/JSystem/include")
+    nw4r_path = Path("PetariHeaders/nw4r/include")
     includes += f"-i {facelib_path} -i {rvl_sdk_path} -I- -i {trk_path} -I- -i {runtime_path} -I- -i {msl_c_path} -I- -i {jsystem_path} -I- -i {nw4r_path} "
     flags += includes
     compiler_path = default_compiler_path
