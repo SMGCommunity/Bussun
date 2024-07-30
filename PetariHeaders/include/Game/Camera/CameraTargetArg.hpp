@@ -1,0 +1,50 @@
+#pragma once
+
+#include "revolution.h"
+#include "Inline.hpp"
+
+class CameraTargetObj;
+class CameraTargetMtx;
+class LiveActor;
+class MarioActor;
+
+class CameraTargetArg {
+public:
+    CameraTargetArg();
+    CameraTargetArg(const LiveActor *);
+
+    CameraTargetArg(CameraTargetMtx *pTargetMtx) NO_INLINE {
+        mTargetObj = NULL;
+        mTargetMtx = pTargetMtx;
+        mLiveActor = NULL;
+        mMarioActor = NULL;
+    }
+    
+    inline INLINE_FUNC_DECL_NO_ARG(CameraTargetArg) {
+        mTargetObj = NULL;
+        mTargetMtx = NULL;
+        mLiveActor = NULL;
+        mMarioActor = NULL;
+    }
+    
+    inline INLINE_FUNC_DECL(CameraTargetArg, CameraTargetMtx *pTargetMtx) {
+        mTargetObj = NULL;
+        mTargetMtx = pTargetMtx;
+        mLiveActor = NULL;
+        mMarioActor = NULL;
+    }
+
+    inline CameraTargetArg(CameraTargetObj *pTargetObj, CameraTargetMtx *pMtx, const LiveActor *pActor, MarioActor *pMario) {
+        mTargetObj = pTargetObj;
+        mTargetMtx = pMtx;
+        mLiveActor = pActor;
+        mMarioActor = pMario;
+    }
+    
+    void setTarget() const;
+
+    CameraTargetObj *mTargetObj;    // _0
+    CameraTargetMtx *mTargetMtx;    // _4
+    const LiveActor *mLiveActor;    // _8
+    MarioActor *mMarioActor;        // _C
+};

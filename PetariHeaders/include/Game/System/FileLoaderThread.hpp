@@ -1,0 +1,23 @@
+#pragma once
+
+#include "Game/System/OSThreadWrapper.hpp"
+#include "Game/System/FileHolder.hpp"
+
+struct RequestFileInfo {
+    u32 _0;
+    s32 mRequestType;                       // _4
+    char mFileName[0x80];                  // _8
+    u32 _88;
+    FileHolderFileEntry* mFileEntry;        // _8C
+};
+
+class FileLoaderThread : public OSThreadWrapper {
+public:
+    FileLoaderThread(int, int, JKRHeap *);
+
+    virtual ~FileLoaderThread();
+    virtual s32 run();
+
+    void loadToMainRAM(RequestFileInfo *);
+    void mountArchiveAndStartCreateResource(RequestFileInfo *);
+};
