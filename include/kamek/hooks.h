@@ -89,10 +89,11 @@ typedef const unsigned char kmSymbol;
 
 #define kmIntWriteInstruction(addr, counter, ...) \
     kmHookInt(counter)[4] = {3, kctWrite, (u32)2, (u32)(addr)}; \
+    __declspec (section ".kamek") void kmIdentifier(Code, counter) (void); \
     __declspec (section ".kamek") asm void kmIdentifier(Code, counter) (void) { \
             nofralloc; \
             __VA_ARGS__; \
-    };
+    }
 // kmWriteInstruction
 //   Replace the word at the given address with the given instruction, assembled
 #define kmWriteInstruction(addr, ...) \
