@@ -1,0 +1,17 @@
+#pragma once
+
+#include "Game/Camera/Camera.hpp"
+
+class CameraCharmedFix : public Camera {
+public:
+    CameraCharmedFix(const char *);
+    virtual ~CameraCharmedFix();
+
+    virtual void reset();
+    virtual CameraTargetObj *calc();
+    virtual CamTranslatorBase *createTranslator();
+
+    TVec3f mAxis;   // _4C
+    TVec3f mUp;     // _58
+    TVec3f mWPoint; // _64
+};
