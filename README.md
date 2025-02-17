@@ -1,24 +1,17 @@
 # Bussun
-**Bussun** provides a framework for writing custom code injections in **Super Mario Galaxy 1**. With this, you will be able to write code, compile code, link to existing functions and structures in the game and load the actual changes. Due to a lack of C++ headers, they are currently being borrowed from [Petari](https://github.com/SMGCommunity/Petari).
+**Bussun** provides a framework for writing custom code injections in **Super Mario Galaxy 1**. With this, you will be able to link to existing functions and structures in the game and load your new code.
 
 *Note:* Bussun is currently **work in progress**. Use at your own risk.
 
 # What is supplied
 Bussun provides C++ headers, symbols and sample C++ code files.
 
-- **PauseMenuNewButton.cpp**: This is a sample file that adds a new button to the Pause Menu which restarts the stage.
-- **Util.cpp**: Here, functions will be defined that can be used by any code added to the source/ folder.
 - **Petari**: This is where the headers are being pulled from. They can be found in the include/ folder.
-- **ModifiedAssets**: This is where files for the PauseMenuNewButton sample are kept.
-- **include**: This is where headers unique to Bussun shall be kept.
-
-# Future Plans
-Currently, the framework is very limited and cannot make new LiveActors, for example. Including this and making this just as capable as [Syati](https://github.com/SMGCommunity/Syati) is the goal.
 
 # Requirements
 In order to use this toolkit, you need to prepare some software and skills:
 
-- The **CodeWarrior PPC EABI C/C++ Compiler**, preferrably application version 4.3.0.172. There is also a free version of that compiler, but you may have to modify the compiler options in the two build scripts.
+- The **CodeWarrior PPC EABI C/C++ Compiler**, preferrably application version 4.3.0.172. For C files, other PPC compilers may work, but for C++, the CodeWarrior compiler is needed for ABI compatibility.
 - A build of the [**Kamek**](https://github.com/Treeki/Kamek) linker.
 - Knowledge of **C** / **C++** / **PowerPC**.
 - **Python 3.11** or newer.
